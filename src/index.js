@@ -1,31 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useReducer } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-function GitHubUser({ login }) {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    fetch(`https://api.github.com/users/${login}`)
-      .then((res) => res.json())
-      .then(setData)
-      .catch(console.error);
-  }, []);
+function Checkbox() {
+  const [checked, toggle] = useReducer((checked) => !checked, false);
 
-  if (data) {
-    return (
-      <div>
-        <h1>{data.login}</h1>
-        <img src={data.avatar_url} width="100" />
-      </div>
-    );
-  }
-  return null;
+  return (
+    <>
+      <input type="checkbox" value={checked} onChange={toggle} />
+      {checked ? "checked" : "not checked"}
+    </>
+  );
 }
 
-ReactDOM.render(
-  <GitHubUser login="moontahoe" />,
-  document.getElementById("root")
-);
+ReactDOM.render(<Checkbox />, document.getElementById("root"));
 
 // "useEffect" allows us to perform side effects inside of our function components
 
@@ -34,3 +22,5 @@ ReactDOM.render(
 // The "dependency array" is a really important part of working with React hooks. It's going to allow for smart rendering so we won't trigger unnecessary re-renders if we pass the right values to that array.
 
 // Another way to use the "useEffect" hook is to fetch some data
+
+// The function of a "useReducer" is that it takes in the current state, and it returns a new state
