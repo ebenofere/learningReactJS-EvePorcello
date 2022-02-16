@@ -2,31 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-// function Slogan(props) {
-//   // console.log(props);
-//   console.log(Object.keys(props), "number of keys");
-//   return (
-//     <div>
-//       <h1>Welcome to {props.club}</h1>
-//       <p>{props.message}</p>
-//       <p>{props.position}</p>
-//     </div>
-//   );
-// }
+function Lake({ name }) {
+  return <h1>{name}</h1>;
+}
 
-function Slogan({ club, message, position }) {
+function App() {
   return (
     <div>
-      <h1>Welcome to {club}</h1>
-      <p>{message}</p>
-      <p>{position}</p>
+      <Lake name="Lake Victoria" />
+      <Lake name="Lake Malawi" />
+      <Lake name="Lake Michigan" />
+      <Lake name="Lake Ontario" />
+      <Lake name="Lake Tahoe" />
+      <Lake name="Great Bear Lake" />
     </div>
   );
 }
 
-ReactDOM.render(
-  <Slogan club="Liverpool" message="You will never walk alone!" position={3} />,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
 
 // Props, or properties, is an object in React that contains properties about the component. With props, we can display dynamic data within a component.
