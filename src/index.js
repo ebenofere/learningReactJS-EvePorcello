@@ -2,12 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-// ReactDOM.render takes in two arguments. The first argument is the name of the element that we want to create, and the second is where we want to render that element.
-
-// React.createElement takes in three arguments. The first is the name of the tag that we want to create. The second is any properties that we want this element to have. And then the third is any children
+let city = {
+  name: "Madrid",
+  country: "Spain",
+};
 
 ReactDOM.render(
-  React.createElement("h1", { style: { color: "red" } }, "Hello!"),
+  <h1 id="heading" className="cool-text">
+    {city.name} is in {city.country}
+  </h1>,
   document.getElementById("root")
 );
 
