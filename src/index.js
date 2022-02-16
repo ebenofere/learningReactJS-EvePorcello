@@ -2,18 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-let city = {
-  name: "Madrid",
-  country: "Spain",
-};
+function Hello() {
+  return (
+    <div>
+      <h1>Welcome to React!</h1>
+      <p>Let's build something cool.</p>
+    </div>
+  );
+}
 
-ReactDOM.render(
-  <h1 id="heading" className="cool-text">
-    {city.name} is in {city.country}
-  </h1>,
-  document.getElementById("root")
-);
+ReactDOM.render(<Hello />, document.getElementById("root"));
 
-// When we save this file, we should see "Hello!" being rendered to the browser
+// When we are designing React applications for real, we start creating user interfaces with collections of React elements called "components". A component lets you put together a user interface with independent reusable pieces. A component is a function that returns some UI.
 
-// React elements are the building blocks of React applications
+// For JSX, a component needs to be capitalized always.
