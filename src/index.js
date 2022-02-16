@@ -2,17 +2,31 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-function Hello() {
+// function Slogan(props) {
+//   // console.log(props);
+//   console.log(Object.keys(props), "number of keys");
+//   return (
+//     <div>
+//       <h1>Welcome to {props.club}</h1>
+//       <p>{props.message}</p>
+//       <p>{props.position}</p>
+//     </div>
+//   );
+// }
+
+function Slogan({ club, message, position }) {
   return (
     <div>
-      <h1>Welcome to React!</h1>
-      <p>Let's build something cool.</p>
+      <h1>Welcome to {club}</h1>
+      <p>{message}</p>
+      <p>{position}</p>
     </div>
   );
 }
 
-ReactDOM.render(<Hello />, document.getElementById("root"));
+ReactDOM.render(
+  <Slogan club="Liverpool" message="You will never walk alone!" position={3} />,
+  document.getElementById("root")
+);
 
-// When we are designing React applications for real, we start creating user interfaces with collections of React elements called "components". A component lets you put together a user interface with independent reusable pieces. A component is a function that returns some UI.
-
-// For JSX, a component needs to be capitalized always.
+// Props, or properties, is an object in React that contains properties about the component. With props, we can display dynamic data within a component.
